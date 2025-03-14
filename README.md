@@ -8,12 +8,12 @@ Este proyecto demuestra un consumo básico de una API con Axios en JavaScript.
 - TailwindCSS mediante CDN
 
 ### Integración de Axios desde CDN
-Para integrar la librería de Axios de una forma simple, utilice el CDN, el cual se puede integrar en el archivo HTML de la siguiente manera:
+Para integrar la librería de `Axios` de una forma simple, utilice el `CDN`, el cual se puede integrar en el archivo `HTML` de la siguiente manera:
 ```html
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 ```
 ### Integración de TailwindCSS desde CDN
-Para integrar la librería de TailwindCSS de una forma simple, utilice el CDN, el cual se puede integrar en el archivo HTML de la siguiente manera:
+Para integrar la librería de `TailwindCSS` de una forma simple, utilice el CDN, el cual se puede integrar en el archivo `HTML` de la siguiente manera:
 ```html
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 ```
@@ -34,7 +34,7 @@ const loadData = async () => { //arrow function asíncrona
 loadData() //llamo a la función
 ```
 ### Recorrer los objetos de la API con forEach
-Para recorrer los objetos de la API, utilicé el método forEach, el cual me permite recorrer cada objeto y mostrarlo en la consola.
+Para recorrer los objetos de la API, utilicé el método `forEach`, el cual me permite recorrer cada objeto y mostrarlo en la consola.
 ```javascript
 const loadData = async () => {
     
@@ -48,7 +48,7 @@ const loadData = async () => {
 loadData()
 ```
 ### Renderizar los objetos en el HTML
-Para renderizar los objetos en el HTML, creé un container para almacenar los personajes y un template para mostrar la información de cada personaje al cargar los datos con `loadData()`.
+Para renderizar los objetos en el `HTML`, creé un `container` para almacenar los personajes y un template para mostrar la información de cada personaje al cargar los datos con `loadData()`.
 - Se crearon los elementos HTML necesarios para mostrar la información de los personajes.
 - Se añadieron los elementos creados al container.
 - Se añadió el container al body del HTML.
@@ -81,8 +81,8 @@ loadData()
 ### Estilos con TailwindCSS
 Para darle estilos a los elementos creados, utilicé la librería de TailwindCSS, la cual me permite añadir clases de estilos a los elementos HTML.
 - Añadí clases de TailwindCSS a los elementos creados.
-- Añadí clases de TailwindCSS al container.
-- Añadí clases de TailwindCSS al body.
+- Añadí clases de TailwindCSS al `container`.
+- Añadí clases de TailwindCSS al `body`.
 
 ```js
 const container = document.getElementById('container')
@@ -112,7 +112,7 @@ const loadData = async () => {
 
 loadData()
 ```
-Finalmente, se añadieron las clases de TailwindCSS al container y al body.
+Finalmente, se añadieron las clases de `TailwindCSS` al `Container` y `body`.
 ```html
 <!DOCTYPE html>
 <html lang="en">
