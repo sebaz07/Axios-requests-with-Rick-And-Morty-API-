@@ -1,8 +1,12 @@
 # Consumo de APIs con Axios en javascript
 Este proyecto demuestra un consumo basico de una API con Axios en javascript.
+## Imagen de la página
+![Imagen de la página](/static/Image.png)
 ## Herramientas
 - Axios mediante CDN
 - API de [Rick y Morty](https://rickandmortyapi.com)
+- TailwindCSS mediante CDN
+
 ### Integración de Axios desde CDN
 Para integrar la librería de Axios de una forma simple, utilice el CDN, el cual se puede integrar en el archivo HTML de la siguiente manera:
 ```html
@@ -73,5 +77,64 @@ const loadData = async () =>{
 } 
 
 loadData()
+```
+### Estilos con TailwindCSS
+Para darle estilos a los elementos creados, utilice la librería de TailwindCSS, la cual me permite añadir clases de estilos a los elementos HTML.
+- Añadí clases de TailwindCSS a los elementos creados.
+- Añadí clases de TailwindCSS al container.
+- Añadí clases de TailwindCSS al body.
+
+```js
+const container = document.getElementById('container')
+
+const loadData = async () =>{
+    const response = await axios.get('https://rickandmortyapi.com/api/character/')
+    const personajes = response.data.results
+    personajes.forEach((personaje) =>{
+        console.log(personaje)
+
+        const card = document.createElement('div')
+        card.className = 'bg-gray-800 p-4 rounded-lg border-4 border-transparent hover:border-green-500 hover:shadow-xl hover:shadow-green-600 hover:bg-gray-700'
+
+
+        const h1 = document.createElement('h1')
+        h1.innerText = personaje.name
+        h1.className = 'text-xl font-bold text-green-400 mb-2 text-center'
+
+        const img = document.createElement('img')
+        img.src = personaje.image
+        img.className = 'w-48 h-48 object-cover rounded-full mx-auto mb-4'
+
+        card.append(h1,img)
+        container.appendChild(card)
+    })
+    document.body.append(container)
+} 
+
+loadData()
+```
+finalmente se añadieron las clases de tailwindcss al container y al body
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body class="bg-gray-900 text-white">
+
+    <h1 class="text-3xl font-bold text-center text-green-400 my-6">Rick and Morty Characters</h1>
+
+    <div id="container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+    </div>
+    
+    <script type="module" src="index.js"></script>
+</body>
+</html>
 ```
 
